@@ -1,32 +1,42 @@
 package org.amaanil;
 
+
 import java.time.LocalDateTime;
 
 public class Visitors {
     static class Names {
+
+
         private String name;
-
-        private LocalDateTime timestamp;
-
-        public Names(String name, LocalDateTime timestamp) {
-            this.name = name;
-            this.timestamp = timestamp;
-        }
+        private String timestamp;
 
         public String getName() {
             return name;
+        }
+
+        public Names(String name, String timestamp) {
+            this.name = name;
+            this.timestamp = timestamp;
         }
 
         public void setName(String name) {
             this.name = name;
         }
 
-        public LocalDateTime getTimestamp() {
+        public String getTimestamp() {
             return timestamp;
         }
 
-        public void setTimestamp(LocalDateTime timestamp) {
+        public void setTimestamp(String timestamp) {
             this.timestamp = timestamp;
+        }
+
+        @Override
+        public String toString() {
+            return "Names{" +
+                    "name='" + name + '\'' +
+                    ", timestamp='" + timestamp + '\'' +
+                    '}';
         }
     }
 }
