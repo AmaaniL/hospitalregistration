@@ -32,16 +32,18 @@ public class Registration {
                         } else {
                             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                             String formattedDateTime = LocalDateTime.now().format(formatter);
-                            Visitors visitor = new Visitors(name, formattedDateTime);
+                            String doctorName = "doctor";
+                            Visitors visitor = new Visitors(name, formattedDateTime, doctorName);
                             visitors.add(visitor);
 
                             System.out.println("Choose between doctor Mario or doctor Frankenstein");
                             String doctor = inputScanner.nextLine();
 
                             if (("Mario".equalsIgnoreCase(doctor))) {
-                                System.out.println("Mario");
+                                visitor.setDoctorName("Mario");
+
                             } else if ("Frankenstein".equalsIgnoreCase(doctor)) {
-                                System.out.println("Frankenstein");
+                                visitor.setDoctorName("Frankenstein");
                             } else {
                                 System.out.println("Wrong input. Type Mario or Frankenstein.");
                             }
@@ -60,7 +62,7 @@ public class Registration {
                     } else {
                         for (Visitors names : visitors
                         ) {
-                            System.out.println(names.getName() + " " + names.getTimestamp());
+                            System.out.println(names.getName() + " " + names.getTimestamp() + " Dr." + names.getDoctorName());
                             running = false;
 
                         }

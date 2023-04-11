@@ -4,20 +4,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Visitors {
-    private String Name;
+    private String name;
     private String timestamp;
-
-    public Visitors(String name, String timestamp) {
-        Name = name;
-        this.timestamp = timestamp;
-    }
+ private String doctorName;
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getTimestamp() {
@@ -28,11 +24,26 @@ public class Visitors {
         this.timestamp = timestamp;
     }
 
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public Visitors(String name, String timestamp, String doctorName) {
+        this.name = name;
+        this.timestamp = timestamp;
+        this.doctorName = doctorName;
+    }
+
     @Override
     public String toString() {
         return "Visitors{" +
-                "Name='" + Name + '\'' +
+                "name='" + name + '\'' +
                 ", timestamp='" + timestamp + '\'' +
+                ", doctorName='" + doctorName + '\'' +
                 '}';
     }
 }
