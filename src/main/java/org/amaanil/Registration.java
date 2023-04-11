@@ -1,10 +1,10 @@
 package org.amaanil;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import static org.amaanil.RegisterPatient.register;
 
 public class Registration {
 
@@ -30,23 +30,7 @@ public class Registration {
                         if ("q".equalsIgnoreCase(name)) {
                             running = false;
                         } else {
-                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                            String formattedDateTime = LocalDateTime.now().format(formatter);
-                            String doctorName = "doctor";
-                            Visitors visitor = new Visitors(name, formattedDateTime, doctorName);
-                            visitors.add(visitor);
-
-                            System.out.println("Choose between doctor Mario or doctor Frankenstein");
-                            String doctor = inputScanner.nextLine();
-
-                            if (("Mario".equalsIgnoreCase(doctor))) {
-                                visitor.setDoctorName("Mario");
-
-                            } else if ("Frankenstein".equalsIgnoreCase(doctor)) {
-                                visitor.setDoctorName("Frankenstein");
-                            } else {
-                                System.out.println("Wrong input. Type Mario or Frankenstein.");
-                            }
+                            register(inputScanner, visitors, name);
 
 
                         }
@@ -60,7 +44,7 @@ public class Registration {
                     } else {
                         for (Visitors names : visitors
                         ) {
-                            System.out.println(names.getName()  + " , Dr." + names.getDoctorName() + " ," + names.getTimestamp());
+                            System.out.println(names.getName()  + ", Dr." + names.getDoctorName() + ", " + names.getTimestamp());
                             running = false;
 
                         }
@@ -72,6 +56,8 @@ public class Registration {
             }
         }
 
-    }
+
+
+}
 
 
