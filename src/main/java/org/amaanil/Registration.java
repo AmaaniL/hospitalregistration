@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Registration {
 
     public void registration() {
-        {
+
             Scanner inputScanner = new Scanner(System.in);
             List<Visitors> visitors = new ArrayList<>();
 
@@ -74,4 +74,4 @@ public class Registration {
 
     }
 
-}
+
