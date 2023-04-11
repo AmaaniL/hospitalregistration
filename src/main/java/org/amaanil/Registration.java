@@ -53,8 +53,6 @@ public class Registration {
 
                     }
 
-
-
                 case "report" -> {
 
                     if (visitors.isEmpty()) {
@@ -62,7 +60,7 @@ public class Registration {
                     } else {
                         for (Visitors names : visitors
                         ) {
-                            System.out.println(names.getName() + " " + names.getTimestamp() + " Dr." + names.getDoctorName());
+                            System.out.println(names.getName()  + " , Dr." + names.getDoctorName() + " ," + names.getTimestamp());
                             running = false;
 
                         }
