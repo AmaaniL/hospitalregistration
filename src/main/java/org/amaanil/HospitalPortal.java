@@ -1,15 +1,17 @@
 package org.amaanil;
 
-import org.amaanil.Register;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class HospitalPortal { //sets up context, gets beans
     public static void main(String[] args) {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 
-Register.register();
+
+        Registration registration = new Registration();
+        registration.registration();
+
 
 
     }

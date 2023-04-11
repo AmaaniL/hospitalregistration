@@ -1,42 +1,38 @@
 package org.amaanil;
 
+import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
-
+@Component
 public class Visitors {
-    static class Names {
+    private String Name;
+    private String timestamp;
 
+    public Visitors(String name, String timestamp) {
+        Name = name;
+        this.timestamp = timestamp;
+    }
 
-        private String name;
-        private String timestamp;
+    public String getName() {
+        return Name;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public void setName(String name) {
+        Name = name;
+    }
 
-        public Names(String name, String timestamp) {
-            this.name = name;
-            this.timestamp = timestamp;
-        }
+    public String getTimestamp() {
+        return timestamp;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 
-        public String getTimestamp() {
-            return timestamp;
-        }
-
-        public void setTimestamp(String timestamp) {
-            this.timestamp = timestamp;
-        }
-
-        @Override
-        public String toString() {
-            return "Names{" +
-                    "name='" + name + '\'' +
-                    ", timestamp='" + timestamp + '\'' +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "Visitors{" +
+                "Name='" + Name + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                '}';
     }
 }

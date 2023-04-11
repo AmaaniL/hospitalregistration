@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Register {
-    public static void register() {
+public class Registration {
+
+public void registration(){
+    {
         Scanner inputScanner = new Scanner(System.in);
-        List<Visitors.Names> visitors = new ArrayList<>();
+        List<Visitors> visitors = new ArrayList<>();
 
         Scanner inputscanner = new Scanner(System.in);
 
@@ -29,14 +31,14 @@ public class Register {
                     } else {
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                         String formattedDateTime = LocalDateTime.now().format(formatter);
-                        Visitors.Names visitor = new Visitors.Names(name, formattedDateTime);
+                        Visitors visitor = new Visitors(name, formattedDateTime);
                         visitors.add(visitor);
 
 
                     }
 
                 }
-                for (Visitors.Names names:  visitors
+                for (Visitors names:  visitors
                 ) {
                     System.out.println(names.getName() + " " + names.getTimestamp());
 
@@ -50,5 +52,7 @@ public class Register {
             default -> System.out.println("Wrong input");
         }
     }
+
+}
 
 }
