@@ -3,10 +3,12 @@ package org.amaanil;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class Visitors {
     private String name;
     private String timestamp;
  private String doctorName;
+
 
     public String getName() {
         return name;
