@@ -1,5 +1,5 @@
 
-Hospital Registration CLI Application
+# Hospital Registration CLI Application
 
 This is a simple command-line interface application for managing hospital visitor registrations. The application allows visitors to register for a visit to a doctor. It's built using Spring Framework.
 
