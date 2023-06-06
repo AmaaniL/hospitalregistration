@@ -9,6 +9,10 @@ public class Visitors {
     private String timestamp;
  private String doctorName;
 
+    public Visitors() {
+
+    }
+
 
     public String getName() {
         return name;
